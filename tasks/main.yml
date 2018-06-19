@@ -1,4 +1,4 @@
 ---
 # defaults file for dciangot.xcache
-- include: centos7.yaml
+- import_tasks: centos7.yml
   when: ansible_distribution == "CentOS" and ansible_distribution_major_version > '6'
