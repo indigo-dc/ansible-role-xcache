@@ -1,6 +1,6 @@
 galaxy_info:
   author: Diego Ciangottini 
-  description: 
+  description:  ansible role for xcache
   company: INFN Perugia
 
   # If the issue tracker for your role is not on github, uncomment the
