@@ -40,7 +40,7 @@
 - name: create xcache server configuration
   template: 
     src: templates/xcache-server-conf.j2
-    dest: /etc/xrootd/xrootd-xcache.conf
+    dest: /etc/xrootd/xrootd-xcache.cfg
     owner: xrootd
     group: xrootd
 
@@ -64,6 +64,15 @@
     src: templates/xrootd-renew-proxy-timer-conf.j2
     dest: /usr/lib/systemd/system/xrootd-renew-proxy.timer
 
+- name: enable service xrootd-renew-proxy
+  systemd:
+    name: xrootd-renew-proxy.timer
+    enabled: yes
+    masked: no
+
+- name: Make sure xrootd-renew-proxy is running
+  systemd: state=restarted name=xrootd-renew-proxy.timer
+
 - name: fetch-crl -q
   command: /usr/sbin/fetch-crl -q
 
@@ -74,7 +83,7 @@
     masked: no
 
 - name: Make sure fetch-crl-cron is running
-  systemd: state=started name=fetch-crl-cron 
+  systemd: state=restarted name=fetch-crl-cron 
 
 - name: enable service xrootd@xcache and ensure it is not masked
   systemd:
@@ -83,7 +92,7 @@
     masked: no
 
 - name: Make sure xrootd@xcache is running
-  systemd: state=started name=xrootd@xcache
+  systemd: state=restarted name=xrootd@xcache
 
 - name: enable service cmsd@xcache
   systemd:
@@ -92,7 +101,7 @@
     masked: no
 
 - name: Make sure cmsd@xcache is running
-  systemd: state=started name=cmsd@xcache
+  systemd: state=restarted name=cmsd@xcache
 
 - name: enable service metricbeat
   systemd:
@@ -101,4 +110,4 @@
     masked: no
 
 - name: Make sure metricbeat is running
-  systemd: state=started name=metricbeat
+  systemd: state=restarted name=metricbeat
