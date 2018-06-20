@@ -64,41 +64,41 @@
     src: templates/xrootd-renew-proxy-timer-conf.j2
     dest: /usr/lib/systemd/system/xrootd-renew-proxy.timer
 
-#- name: fetch-crl -q
-#  command: /usr/sbin/fetch-crl -q
+- name: fetch-crl -q
+  command: /usr/sbin/fetch-crl -q
 
-#- name: enable service fetch-crl-cron and ensure it is not masked
-#  systemd:
-#    name: fetch-crl-cron
-#    enabled: yes
-#    masked: no
+- name: enable service fetch-crl-cron and ensure it is not masked
+  systemd:
+    name: fetch-crl-cron
+    enabled: yes
+    masked: no
 
-#- name: Make sure fetch-crl-cron is running
-#  systemd: state=started name=fetch-crl-cron 
+- name: Make sure fetch-crl-cron is running
+  systemd: state=started name=fetch-crl-cron 
 
-#- name: enable service xrootd@xcache and ensure it is not masked
-#  systemd:
-#    name: xrootd@xcache
-#    enabled: yes
-#    masked: no
+- name: enable service xrootd@xcache and ensure it is not masked
+  systemd:
+    name: xrootd@xcache
+    enabled: yes
+    masked: no
 
-#- name: Make sure xrootd@xcache is running
-#  systemd: state=started name=xrootd@xcache
+- name: Make sure xrootd@xcache is running
+  systemd: state=started name=xrootd@xcache
 
-#- name: enable service cmsd@xcache
-#  systemd:
-#    name: cmsd@xcache
-#    enabled: yes
-#    masked: no
+- name: enable service cmsd@xcache
+  systemd:
+    name: cmsd@xcache
+    enabled: yes
+    masked: no
 
-#- name: Make sure cmsd@xcache is running
-#  systemd: state=started name=cmsd@xcache
+- name: Make sure cmsd@xcache is running
+  systemd: state=started name=cmsd@xcache
 
-#- name: enable service metricbeat
-#  systemd:
-#    name: metricbeat
-#    enabled: yes
-#    masked: no
+- name: enable service metricbeat
+  systemd:
+    name: metricbeat
+    enabled: yes
+    masked: no
 
-#- name: Make sure metricbeat is running
-#  systemd: state=started name=metricbeat
+- name: Make sure metricbeat is running
+  systemd: state=started name=metricbeat
