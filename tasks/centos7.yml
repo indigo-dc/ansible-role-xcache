@@ -52,7 +52,7 @@
 - name: create metricbeat configuration 
   template:
     src: templates/metricbeat-conf.j2
-    dest: /etc/metricbeat.yml
+    dest: /etc/metricbeat/metricbeat.yml
 
 - name: create renew proxy service configuration
   template:
