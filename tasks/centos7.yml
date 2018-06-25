@@ -58,7 +58,7 @@
 
 - name: set xrootd owner for cache directory
   file: 
-    dest: {{ CACHE_PATH }}
+    dest: "{{ CACHE_PATH }}"
     owner: xrootd
     group: xrootd
     recurse: yes
