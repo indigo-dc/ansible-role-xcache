@@ -49,6 +49,20 @@
     src: templates/Authfile-noauth.j2
     dest: /etc/xrootd/Authfile-noauth
 
+- name: set xrootd owner for /etc/grid-security/xrd
+  file: 
+    dest: /etc/grid-security/xrd
+    owner: xrootd
+    group: xrootd
+    recurse: yes
+
+- name: set xrootd owner for cache directory
+  file: 
+    dest: {{ CACHE_PATH }}
+    owner: xrootd
+    group: xrootd
+    recurse: yes
+
 - name: create metricbeat configuration 
   template:
     src: templates/metricbeat-conf.j2
