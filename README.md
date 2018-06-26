@@ -12,6 +12,7 @@ Requirements
 
 * Ansible 2.4
 * OS: Centos7
+* valid CMS /etc/vomses
 * Port: one open service port
 * Valid grid host certifate
 * Valid service certificate that is able to read from AAA (/etc/grid-security/xrd/xrdcert.pem, /etc/grid-security/xrd/xrdkey.pem)
