@@ -14,11 +14,11 @@ set blkSize={{ BLOCK_SIZE }}
 
 all.manager $rdtrCache:$rdtrPortCmsd
 
-xrootd.trace all 
-ofs.trace all
-xrd.trace all
-cms.trace all
-sec.trace all
+xrootd.trace info 
+ofs.trace info
+xrd.trace info
+cms.trace info
+sec.trace info
 pfc.trace $cacheLogLevel
 
 if exec cmsd
@@ -53,20 +53,20 @@ pss.origin $rdtrGlobal:$rdtrGlobalPort
 
 pss.config streams $cacheStreams
 
-xrootd.seclib /usr/lib64/libXrdSec.so                                                                                                                                                                              
-sec.protocol /usr/lib64 gsi \                                                                                                                                                                                      
-  -certdir:/etc/grid-security/certificates \                                                                                                                                                                       
-  -cert:/etc/grid-security/xrd/xrdcert.pem \
-  -key:/etc/grid-security/xrd/xrdkey.pem \
-  -d:3 \                                                                                                                                                                                                           
-  -crl:1                                                                                                                                                                                                           
+#xrootd.seclib /usr/lib64/libXrdSec.so                                                                                                                                                                              
+#sec.protocol /usr/lib64 gsi \                                                                                                                                                                                      
+#  -certdir:/etc/grid-security/certificates \                                                                                                                                                                       
+#  -cert:/etc/grid-security/xrd/xrdcert.pem \
+#  -key:/etc/grid-security/xrd/xrdkey.pem \
+#  -d:3 \                                                                                                                                                                                                           
+#  -crl:1                                                                                                                                                                                                           
                                                                                                                                                                                                                    
 # Enable the authorization module, even if we have an unauthenticated instance.                                                                                                                                    
 ofs.authorize 1                                                                                                                                                                                                    
 acc.audit deny grant                                                                                                                                                                                               
                                                                                                 
 acc.authdb /etc/xrootd/Authfile-auth                                                                                                                                                                               
-sec.protbind * gsi     
+#sec.protbind * gsi     
 
 pfc.diskusage $cacheLowWm $cacheHiWm
 pfc.ram       ${cacheRam}g
