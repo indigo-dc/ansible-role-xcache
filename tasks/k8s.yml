@@ -5,5 +5,5 @@
   template:
     src: templates/k8s/k8s_deployment.j2
     dest: /etc/XCache_deployment.yml
-- name: "Deploy XCache"
+- name: "Deploy XCache on Kubernetes"
   command: kubectl create -f /etc/XCache_deployment.yml

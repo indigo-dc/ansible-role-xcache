@@ -1,4 +1,4 @@
-- name: start xcache redirector
+- name: start marathon xcache redirector
   run_once: true
   uri:
     url: "{{marathon_protocol}}://marathon.service.consul:{{marathon_port}}/v2/apps/xcacheredir"
@@ -15,7 +15,7 @@
   delay: 20
   changed_when: false
 
-- name: start xcache server
+- name: start marathon xcache server
   run_once: true
   uri:
     url: "{{marathon_protocol}}://marathon.service.consul:{{marathon_port}}/v2/apps/xcacheserver"
@@ -32,7 +32,7 @@
   delay: 20
   changed_when: false
 
-- name: start xcache exposer
+- name: start marathon xcache exposer
   run_once: true
   uri:
     url: "{{marathon_protocol}}://marathon.service.consul:{{marathon_port}}/v2/apps/expose"
