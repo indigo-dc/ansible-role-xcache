@@ -1,9 +1,9 @@
 - name: wait 10 minutes for nodes to be configured
   wait_for: timeout=600
   delegate_to: localhost
-- name: "Compile config template XCache"
-  template:
-    src: templates/k8s/k8s_deployment.j2
-    dest: /etc/XCache_deployment.yml
+#- name: "Compile config template XCache"
+#  template:
+#    src: templates/k8s/k8s_deployment.j2
+#    dest: /etc/XCache_deployment.yml
 - name: "Deploy XCache on Kubernetes"
-  command: kubectl create -f /etc/XCache_deployment.yml
+  command: kubectl create -f {{ lookup('template', 'templates/k8s/k8s_deployment.j2') }}
