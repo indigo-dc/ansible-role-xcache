@@ -208,5 +208,3 @@ spec:
       app: xcache
 
   replicas: 1
-
-  ---
