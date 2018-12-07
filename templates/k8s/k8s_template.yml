@@ -34,7 +34,8 @@ spec:
     port: 1194
     targetPort: 1194
     nodePort: 31194
-
+  externalIPs:
+  - "{{ master_ip }}"
 ---
 apiVersion: apps/v1
 kind: Deployment
