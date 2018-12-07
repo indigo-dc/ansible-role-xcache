@@ -155,6 +155,9 @@ spec:
       - name: xcache-data
         hostPath:
           path: /data/xrd
+      - name: xcache-creds
+        hostPath:
+          path: /tmp 
       containers:
       - name: cache
         imagePullPolicy: Always
@@ -191,6 +194,8 @@ spec:
         volumeMounts:
         - mountPath: /data/xrd
           name: xcache-data
+        - mountPath: /tmp/
+          name: xcache-creds
         livenessProbe:
           exec:
             command:
