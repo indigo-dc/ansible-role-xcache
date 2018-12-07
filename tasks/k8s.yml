@@ -1,5 +1,5 @@
-- name: wait 10 minutes for nodes to be configured
-  wait_for: timeout=600
+- name: wait 1 minutes for nodes to be configured
+  wait_for: timeout=60
   delegate_to: localhost
 - name: "Compile config template XCache"
   template:
