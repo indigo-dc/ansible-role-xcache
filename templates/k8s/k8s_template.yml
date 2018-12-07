@@ -94,17 +94,17 @@ spec:
     metadata:
       labels:
         app: proxy
-    spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - xredir
-            topologyKey: "kubernetes.io/hostname"
+    # spec:
+    #   affinity:
+    #     podAntiAffinity:
+    #       requiredDuringSchedulingIgnoredDuringExecution:
+    #       - labelSelector:
+    #           matchExpressions:
+    #           - key: app
+    #             operator: In
+    #             values:
+    #             - xredir
+    #         topologyKey: "kubernetes.io/hostname"
       containers:
       - name: proxy
         imagePullPolicy: Always
