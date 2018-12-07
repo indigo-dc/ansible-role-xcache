@@ -35,7 +35,7 @@
         "REDIR_CMSD_PORT": "31213",
         "REDIR_HOST": "{{redirector_ip}}",
         "ORIGIN_HOST": "{{ ORIGIN_HOST }}",
-        "ORIGIN_XRD_PORT": "{{ ORIGIN_HOST }}",
+        "ORIGIN_XRD_PORT": "{{ ORIGIN_XRD_PORT }}",
         "BLOCK_SIZE": "{{ BLOCK_SIZE }}",
         "CACHE_PATH": "/data/xrd",
         "CACHE_RAM_GB": "{{ CACHE_RAM_GB }}",
