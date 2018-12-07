@@ -94,7 +94,7 @@ spec:
     metadata:
       labels:
         app: proxy
-    # spec:
+    spec:
     #   affinity:
     #     podAntiAffinity:
     #       requiredDuringSchedulingIgnoredDuringExecution:
