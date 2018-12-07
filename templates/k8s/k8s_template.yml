@@ -140,7 +140,6 @@ spec:
       labels:
         app: xcache
     spec:
-      imagePullPolicy: Always
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
