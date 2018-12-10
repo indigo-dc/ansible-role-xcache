@@ -1,5 +1,6 @@
 ---
 # defaults file for dciangot.xcache
+server_image: cloudpg/xrootd-proxy:cms
 BLOCK_SIZE: 512k
 CACHE_LOG_LEVEL: info
 CACHE_PATH: /data/xrd

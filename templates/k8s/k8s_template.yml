@@ -64,7 +64,7 @@ spec:
           value: xcache-service.default.svc.cluster.local 
         - name: REDIR_XRD_PORT
           value: "1094"
-        image: cloudpg/xrootd-proxy:cms
+        image: "{{ server_image }}"
         livenessProbe:
           exec:
             command:
@@ -108,7 +108,7 @@ spec:
           value: xcache-service.default.svc.cluster.local
         - name: REDIR_XRD_PORT
           value: "1094"
-        image: cloudpg/xrootd-proxy:cms
+        image: "{{ server_image }}"
         ports:
         - containerPort: 1194
 
@@ -180,7 +180,7 @@ spec:
           value: xcache-service.default.svc.cluster.local
         - name: STREAMS
           value: "{{ STREAMS }}"
-        image: cloudpg/xrootd-proxy:cms
+        image: "{{ server_image }}"
         volumeMounts:
         - mountPath: /data/xrd
           name: xcache-data
