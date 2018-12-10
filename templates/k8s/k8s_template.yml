@@ -95,16 +95,6 @@ spec:
       labels:
         app: proxy
     spec:
-    #   affinity:
-    #     podAntiAffinity:
-    #       requiredDuringSchedulingIgnoredDuringExecution:
-    #       - labelSelector:
-    #           matchExpressions:
-    #           - key: app
-    #             operator: In
-    #             values:
-    #             - xredir
-    #         topologyKey: "kubernetes.io/hostname"
       containers:
       - name: proxy
         imagePullPolicy: Always
@@ -194,8 +184,9 @@ spec:
         volumeMounts:
         - mountPath: /data/xrd
           name: xcache-data
-        - mountPath: /tmp/
-          name: xcache-creds
+        ## WAITING FOR CMS VOMS TTS solution
+        # - mountPath: /tmp/
+        #   name: xcache-creds
         livenessProbe:
           exec:
             command:
@@ -207,6 +198,26 @@ spec:
         ports:
         - containerPort: 32294
         - containerPort: 31113
+      ## WAITING FOR CMS VOMS TTS solution
+      # - name: proxy
+      #   imagePullPolicy: Always
+      #   image: cloudpg/get-proxy
+      #   env:
+      #   - name: PROXY_URL
+      #     value: "{{ tts_url }}"
+      #   - name: PROXY_token
+      #     value: "{{ iam_token }}"
+      #   volumeMounts:
+      #   - mountPath: /tmp/
+      #     name: xcache-creds
+      #   livenessProbe:
+      #     exec:
+      #       command:
+      #       - curl
+      #       - -f
+      #       - http://localhost:8888/check_health
+      #     initialDelaySeconds: 300
+      #     periodSeconds: 60
 
   selector:
     matchLabels:
