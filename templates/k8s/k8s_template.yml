@@ -204,9 +204,9 @@ spec:
       #   image: cloudpg/get-proxy
       #   env:
       #   - name: PROXY_URL
-      #     value: "{{ tts_url }}"
+      #     value: 
       #   - name: PROXY_token
-      #     value: "{{ iam_token }}"
+      #     value: 
       #   volumeMounts:
       #   - mountPath: /tmp/
       #     name: xcache-creds
