@@ -16,7 +16,7 @@
         "type": "DOCKER",
         "volumes": [],
         "docker": {
-        "image": "cloudpg/xrootd-proxy:cms",
+        "image": "{{ server_image }}",
         "network": "BRIDGE",
         "portMappings": [
           {

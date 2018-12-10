@@ -22,7 +22,7 @@
         }
         ],
         "docker": {
-        "image": "cloudpg/xrootd-proxy:cms",
+        "image": "{{ server_image }}",
         "network": "HOST",
         "portMappings": [],
         "privileged": true,
