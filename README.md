@@ -1,3 +1,5 @@
+![build test](https://travis-ci.org/indigo-dc/ansible-role-xcache.svg?branch=master)
+
 Role Name
 =========
 
