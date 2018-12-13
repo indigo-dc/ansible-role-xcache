@@ -49,7 +49,7 @@ Example Playbook
 - hosts: localhost
   remote_user: root
   roles:
-    - role: dciangot.xcache 
+    - role: indigo-dc.xcache 
 ```
 
 Author Information
